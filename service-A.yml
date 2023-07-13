@@ -6,3 +6,11 @@ spring:
     consul:
       discovery:
         instanceId: ${spring.application.name}
+    stream:
+      bindings:
+        output:
+          binder: kafka
+          destination: cloudEX
+      kafka:
+        binder:
+          replicationFactor: 1

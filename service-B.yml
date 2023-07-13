@@ -7,3 +7,11 @@ spring:
       discovery:
         instanceId: ${spring.application.name}:${random.value}
         health-check-interval: 5s
+    stream:
+      bindings:
+        output:
+          binder: kafka
+          destination: cloudEX
+      kafka:
+        binder:
+          replicationFactor: 1
